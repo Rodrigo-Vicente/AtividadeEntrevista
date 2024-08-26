@@ -1,0 +1,20 @@
+﻿@model WebAtividadeEntrevista.Models.ClienteModel
+@{
+    ViewBag.Title = "Alterar Cliente";
+}
+@section scripts{
+    <script src="~/Scripts/Clientes/FI.AltClientes.js"></script>
+    <script src="~/Scripts/Clientes/ValidarCPF.js"></script>
+    <script>
+        var urlPost = '@Url.Action("Alterar", "Cliente", new { area = "" })';
+        var obj = @Html.Raw(Json.Encode(Model));
+        var urlRetorno = '@Url.Action("Index", "Cliente", new { area = "" })';
+        var urlIncluirBene = '@Url.Action("AdicionarBeneficiario", "Beneficiario", new {area = ""})';
+        var urlAttBene = '@Url.Action("AtualizarBeneFiciario", "Beneficiario", new {area = ""})';
+        var urlBuscarBene = '@Url.Action("BuscarBeneficiariosPorClienteId", "Beneficiario", new {area = ""})';
+        var urlDelBene = '@Url.Action("DeletarBeneficiario", "Beneficiario", new {area = ""})';
+        var urlValidarCPF = '@Url.Action("ValidarCpfBeneficiario", "Beneficiario", new { area = ""})';
+    </script>
+}
+<h2>@Html.Raw(ViewBag.Title)</h2>
+@Html.Partial("FormsAlt")

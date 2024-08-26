@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar Cliente";
+}
+@section scripts{
+    <script src="~/Scripts/Clientes/FI.Clientes.js"></script>
+    <script src="~/Scripts/Clientes/ValidarCPF.js"></script>
+    <script>
+        var urlPost = '@Url.Action("Incluir", "Cliente", new { area = "" })';
+        var urlRetorno = '@Url.Action("Index", "Cliente", new { area = "" })';
+        var urlValidarCPF = '@Url.Action("ValidarCpfBeneficiario", "Beneficiario", new { area = ""})'
+    </script>
+}
+<h2>@Html.Raw(ViewBag.Title)</h2>
+@Html.Partial("Forms")
